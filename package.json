@@ -1,0 +1,22 @@
+{
+  "name": "to-do",
+  "version": "1.0.0",
+  "description": "A simple To-do PWA app",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -c-1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TarunKoli/to-do-app.git"
+  },
+  "author": "Tarun Koli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TarunKoli/to-do-app/issues"
+  },
+  "homepage": "https://github.com/TarunKoli/to-do-app#readme",
+  "dependencies": {
+    "http-server": "^14.0.0"
+  }
+}
