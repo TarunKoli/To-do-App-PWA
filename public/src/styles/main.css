@@ -1,0 +1,143 @@
+.main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background-color: var(--main-theme);
+}
+.nav {
+  flex-basis: 25%;
+  background-color: var(--nav-bg);
+  padding: 2rem 3rem 1rem 3rem;
+}
+.sideBox {
+  flex-basis: 75%;
+}
+
+.switch {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.switch div {
+  border: 0.3rem solid var(--main-theme);
+  height: 7.5rem;
+  width: 7.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+}
+.profileImg {
+  margin-top: 1rem;
+  padding-left: 15%;
+  width: 100%;
+}
+.image {
+  width: 14rem;
+  height: 14rem;
+  background-color: rgba(56, 153, 153, 0.3);
+  border-radius: 50%;
+  position: relative;
+}
+.image::before,
+.image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to bottom, #b121e3, #ff006b);
+  border-left: 0;
+  border-top-right-radius: 110px;
+  border-bottom-right-radius: 110px;
+}
+.image::before {
+  filter: blur(50px);
+}
+.image span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 93%;
+  width: 93%;
+  background-color: var(--nav-bg);
+  border-radius: 50%;
+  z-index: 3;
+}
+.image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  width: 85%;
+  height: 85%;
+}
+.name {
+  margin-top: 2rem;
+  padding-left: 15%;
+}
+.name h1 {
+  color: white;
+  font-size: 4.5rem;
+  letter-spacing: 0.2rem;
+  line-height: 6.5rem;
+}
+
+.links {
+  margin-top: 1rem;
+  padding-left: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-theme);
+}
+.links div {
+  width: 100%;
+  padding: 1rem 0 1rem 2rem;
+  display: flex;
+  align-items: center;
+}
+.links div figure {
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.links div i {
+  font-size: 2rem;
+}
+.links div a {
+  color: white;
+  font-size: 1.6rem;
+  margin-left: 3rem;
+}
+.graph {
+  margin-top: 1rem;
+  padding-left: 2rem;
+}
+.graph div img {
+  width: 90%;
+}
+.graph div p {
+  color: var(--main-theme);
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.graph div h2 {
+  color: white;
+  font-size: 2.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
