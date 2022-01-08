@@ -89,7 +89,7 @@
   color: white;
   font-size: 4.5rem;
   letter-spacing: 0.2rem;
-  line-height: 6.5rem;
+  line-height: 6rem;
 }
 
 .links {
@@ -99,13 +99,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--main-theme);
+  color: #344eac;
 }
 .links div {
   width: 100%;
   padding: 1rem 0 1rem 2rem;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .links div figure {
   height: 3rem;
@@ -123,7 +124,7 @@
   margin-left: 3rem;
 }
 .graph {
-  margin-top: 1rem;
+  margin-top: 2rem;
   padding-left: 2rem;
 }
 .graph div img {
