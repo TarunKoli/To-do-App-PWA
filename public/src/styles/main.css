@@ -106,7 +106,6 @@
   padding: 1rem 0 1rem 2rem;
   display: flex;
   align-items: center;
-  cursor: pointer;
 }
 .links div figure {
   height: 3rem;
@@ -122,6 +121,7 @@
   color: white;
   font-size: 1.6rem;
   margin-left: 3rem;
+  cursor: pointer;
 }
 .graph {
   margin-top: 2rem;
