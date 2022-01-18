@@ -42,34 +42,182 @@
           </div>
        </div>
        <div class="sideBox">
+           <div class="boxWrapper">
            <div class="heading">
                <div class="greeting">
                    <h1>What's up, Olivia !</h1>
                </div>
                <div class="clocksy">
-                    <div class="clock"></div>
+                  <div class="clock">
+                    <div class="hour">
+                        <div class="hr" id="hr"></div>
+                    </div>
+                    <div class="mins">
+                        <div class="mn" id="mn"></div>
+                    </div>
+                    <div class="secs">
+                        <div class="sc" id="sc"></div>
+                    </div>
+                  </div>
                </div>
            </div>
-           <div>
-               <div></div>
-               <div></div>
-               <div></div>
-               <div></div>
+           <div class="categories">
+               <h4>Categories</h4>
+              <div class="wrapper">
+                <div class="types">
+                    <div class="count">
+                        <p>45 Tasks</p>
+                    </div>
+                    <div class="taskName">
+                        <h2>Buisness</h2>
+                        <img src="./src/images/Buisness.png" alt="BuisnessIcon">
+                    </div>
+                    <div class="progress">
+                        <div class="outOf"><div class="inOf" data-value="Buisness"></div></div>
+                    </div>
+                   </div>
+                   <div class="types">
+                    <div class="count">
+                        <p>20 Tasks</p>
+                    </div>
+                    <div class="taskName">
+                        <h2>Personal</h2>
+                        <img src="./src/images/Personal.png" alt="BuisnessIcon">
+                    </div>
+                    <div class="progress">
+                        <div class="outOf"><div class="inOf" data-value="Personal"></div></div>
+                    </div>
+                   </div>
+                   <div class="types">
+                    <div class="count">
+                        <p>15 Tasks</p>
+                    </div>
+                    <div class="taskName">
+                        <h2>Study</h2>
+                        <img src="./src/images/Study.png" alt="BuisnessIcon">
+                    </div>
+                    <div class="progress">
+                        <div class="outOf"><div class="inOf" data-value="Study"></div></div>
+                    </div>
+                   </div>
+                   <div class="types">
+                    <div class="count">
+                        <p>5 Tasks</p>
+                    </div>
+                    <div class="taskName">
+                        <h2>Music</h2>
+                        <img src="./src/images/Music.png" alt="BuisnessIcon">
+                    </div>
+                    <div class="progress">
+                        <div class="outOf"><div class="inOf" data-value="Music"></div></div>
+                    </div>
+                   </div>
+                   <div class="types">
+                    <div class="count">
+                        <p>45 Tasks</p>
+                    </div>
+                    <div class="taskName">
+                        <h2>Buisness</h2>
+                        <img src="./src/images/Buisness.png" alt="BuisnessIcon">
+                    </div>
+                    <div class="progress">
+                        <div class="outOf"><div class="inOf" data-value="Buisness"></div></div>
+                    </div>
+                   </div>
+                   <div class="types">
+                    <div class="count">
+                        <p>20 Tasks</p>
+                    </div>
+                    <div class="taskName">
+                        <h2>Personal</h2>
+                        <img src="./src/images/Personal.png" alt="BuisnessIcon">
+                    </div>
+                    <div class="progress">
+                        <div class="outOf"><div class="inOf" data-value="Personal"></div></div>
+                    </div>
+                   </div>
+                   <div class="types">
+                    <div class="count">
+                        <p>15 Tasks</p>
+                    </div>
+                    <div class="taskName">
+                        <h2>Study</h2>
+                        <img src="./src/images/Study.png" alt="BuisnessIcon">
+                    </div>
+                    <div class="progress">
+                        <div class="outOf"><div class="inOf" data-value="Study"></div></div>
+                    </div>
+                   </div>
+                   <div class="types">
+                    <div class="count">
+                        <p>5 Tasks</p>
+                    </div>
+                    <div class="taskName">
+                        <h2>Music</h2>
+                        <img src="./src/images/Music.png" alt="BuisnessIcon">
+                    </div>
+                    <div class="progress">
+                        <div class="outOf"><div class="inOf" data-value="Music"></div></div>
+                    </div>
+                   </div>
+              </div>
            </div>
-           <div>
-               <div>
-                   <p></p>
+           <div class="tasks">
+                <h4>Today's Tasks</h4>
+               <div class="assignes">
+                   <div class="box">
+                       <div class="checkbox"></div>
+                       <div class="content"><p>Daily meeting with team</p></div>
+                   </div>
+                <div class="box">
+                    <div class="checkbox"></div>
+                    <div class="content"><p>Daily meeting with team</p></div>
+                </div>
+                <div class="box">
+                    <div class="checkbox"></div>
+                    <div class="content"><p>Daily meeting with team</p></div>
+                </div>
+                <div class="box">
+                    <div class="checkbox"></div>
+                    <div class="content"><p>Daily meeting with team</p></div>
+                </div>
+                 
                </div>
-               <div>
-                   <div></div>
-                   <div></div>
-                   <div></div>
-                   <div></div>
-                   <div></div>
-                   <div></div>
+               <div class="add">
+                   <div class="icon">
+                    <img src="./src/images/plus.png" alt="addIcon">
+                   </div>
                </div>
+           </div>
            </div>
        </div>
    </div>
+   <script>
+       const deg = 6;
+       const hr = document.querySelector('#hr');
+       const mn = document.querySelector('#mn');
+       const sc = document.querySelector('#sc');
+
+      setInterval(()=>{
+        let day = new Date();
+       let hh = day.getHours()*30;
+       let mm = day.getMinutes()*deg;
+       let ss = day.getSeconds()*deg;
+
+       hr.style.transform = `rotateZ(${(hh)+(mm/12)}deg)`;
+       mn.style.transform = `rotateZ(${mm}deg)`;
+       sc.style.transform = `rotateZ(${ss}deg)`;
+      })
+
+      const checkboxes = document.querySelectorAll('.checkbox');
+      const content = document.querySelectorAll('.content');
+      checkboxes.forEach((checkbox,i)=>{
+          checkbox.addEventListener("click",function(e){
+            checkbox.classList.toggle('checkbox');  
+            checkbox.classList.toggle('checked');
+            content[i].firstChild.classList.toggle('strike');
+          })
+      })
+   </script>
 </body>
 </html>

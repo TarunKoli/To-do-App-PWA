@@ -8,6 +8,8 @@
 :root {
   --nav-bg: #0f125e;
   --main-theme: #344fa1;
+  --main-heading: #94abff;
+  --progress-bar: #344eac;
 }
 
 html {
