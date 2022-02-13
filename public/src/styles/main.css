@@ -119,6 +119,10 @@
   padding-bottom: 5%;
   overflow-x: scroll;
 }
+.wrapper[data-value='list'] {
+  flex-wrap: wrap;
+}
+
 .wrapper::-webkit-scrollbar {
   display: none;
 }
@@ -130,6 +134,10 @@
   font-size: 1.8rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
+}
+.categories[data-value='list'] h4 {
+  top: -12%;
+  left: 4.5%;
 }
 .types {
   min-width: 24rem;
@@ -143,6 +151,9 @@
 }
 .types:first-child {
   margin-left: 5em;
+}
+.wrapper[data-value='list'] .types {
+  margin: 0 0 4rem 4rem;
 }
 .count {
   font-size: 1.4rem;
