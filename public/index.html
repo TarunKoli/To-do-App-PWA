@@ -1,279 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script
-    src="https://kit.fontawesome.com/e7a0c04ff2.js"
-    crossOrigin="anonymous"
-  ></script>
-    <link rel="stylesheet" href="./src/styles/global.css">
-    <link rel="stylesheet" href="./src/styles/nav.css">
-    <link rel="stylesheet" href="./src/styles/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles/global.css" />
+    <link rel="stylesheet" href="./src/styles/nav.css" />
+    <link rel="stylesheet" href="./src/styles/main.css" />
     <title>To-Do App / Home</title>
-</head>
-<body>
-   <div class="main">
-       <div class="nav">
-          <div class="switch">
-              <div><i class="fas fa-angle-left"></i></div>
+  </head>
+  <body>
+    <div class="main">
+      <div class="nav">
+        <div class="switch">
+          <div><i class="fas fa-angle-left"></i></div>
+        </div>
+        <div class="profileImg">
+          <div class="image">
+            <span></span>
+            <img src="./src/images/Vector.png" alt="" />
           </div>
-          <div class="profileImg">
-              <div class="image">
-                  <span></span>
-                  <img src="./src/images/Vector.png" alt="">
+        </div>
+        <div class="name">
+          <h1>Olivia Mitchell</h1>
+        </div>
+        <div class="links">
+          <div>
+            <figure><i class="far fa-bookmark"></i></figure>
+            <a>Task List</a>
+          </div>
+          <div>
+            <figure><i class="fas fa-th-large"></i></figure>
+            <a>Categories</a>
+          </div>
+          <div>
+            <figure><i class="far fa-clock"></i></figure>
+            <a>Schedules</a>
+          </div>
+        </div>
+        <div class="graph">
+          <div><img src="./src/images/Group 3.png" alt="" /></div>
+          <div>
+            <p>Good</p>
+            <h2>Consistency</h2>
+          </div>
+        </div>
+      </div>
+      <div class="sideBox">
+        <div class="heading">
+          <div class="greeting">
+            <h1>What's up, Olivia !</h1>
+          </div>
+          <div class="clocksy">
+            <div class="clock">
+              <div class="hour">
+                <div class="hr" id="hr"></div>
               </div>
-          </div>
-          <div class="name">
-              <h1>Olivia Mitchell</h1>
-          </div>
-          <div class="links">
-              <div><figure><i class="far fa-bookmark"></i></figure><a>Task List</a></div>
-              <div><figure><i class="fas fa-th-large"></i></figure><a>Categories</a></div>
-              <div><figure><i class="far fa-clock"></i></figure><a>Schedules</a></div>
-          </div>
-          <div class="graph">
-              <div><img src="./src/images/Group 3.png" alt=""></div>
-              <div>
-                  <p>Good</p>
-                  <h2>Consistency</h2>
+              <div class="mins">
+                <div class="mn" id="mn"></div>
               </div>
-          </div>
-       </div>
-       <div class="sideBox">
-         
-           <div class="heading">
-               <div class="greeting">
-                   <h1>What's up, Olivia !</h1>
-               </div>
-               <div class="clocksy">
-                  <div class="clock">
-                    <div class="hour">
-                        <div class="hr" id="hr"></div>
-                    </div>
-                    <div class="mins">
-                        <div class="mn" id="mn"></div>
-                    </div>
-                    <div class="secs">
-                        <div class="sc" id="sc"></div>
-                    </div>
-                  </div>
-               </div>
-           </div>
-           <div class="categories">
-               <h4>Categories</h4>
-              <div class="wrapper">
-                <div class="types">
-                    <div class="count">
-                        <p>45 Tasks</p>
-                    </div>
-                    <div class="taskName">
-                        <h2>Buisness</h2>
-                        <img src="./src/images/Buisness.png" alt="BuisnessIcon">
-                    </div>
-                    <div class="progress">
-                        <div class="outOf"><div class="inOf" data-value="Buisness"></div></div>
-                    </div>
-                   </div>
-                   <div class="types">
-                    <div class="count">
-                        <p>20 Tasks</p>
-                    </div>
-                    <div class="taskName">
-                        <h2>Personal</h2>
-                        <img src="./src/images/Personal.png" alt="BuisnessIcon">
-                    </div>
-                    <div class="progress">
-                        <div class="outOf"><div class="inOf" data-value="Personal"></div></div>
-                    </div>
-                   </div>
-                   <div class="types">
-                    <div class="count">
-                        <p>15 Tasks</p>
-                    </div>
-                    <div class="taskName">
-                        <h2>Study</h2>
-                        <img src="./src/images/Study.png" alt="BuisnessIcon">
-                    </div>
-                    <div class="progress">
-                        <div class="outOf"><div class="inOf" data-value="Study"></div></div>
-                    </div>
-                   </div>
-                   <div class="types">
-                    <div class="count">
-                        <p>5 Tasks</p>
-                    </div>
-                    <div class="taskName">
-                        <h2>Music</h2>
-                        <img src="./src/images/Music.png" alt="BuisnessIcon">
-                    </div>
-                    <div class="progress">
-                        <div class="outOf"><div class="inOf" data-value="Music"></div></div>
-                    </div>
-                   </div>
-                   <div class="types">
-                    <div class="count">
-                        <p>45 Tasks</p>
-                    </div>
-                    <div class="taskName">
-                        <h2>Buisness</h2>
-                        <img src="./src/images/Buisness.png" alt="BuisnessIcon">
-                    </div>
-                    <div class="progress">
-                        <div class="outOf"><div class="inOf" data-value="Buisness"></div></div>
-                    </div>
-                   </div>
-                   <div class="types">
-                    <div class="count">
-                        <p>20 Tasks</p>
-                    </div>
-                    <div class="taskName">
-                        <h2>Personal</h2>
-                        <img src="./src/images/Personal.png" alt="BuisnessIcon">
-                    </div>
-                    <div class="progress">
-                        <div class="outOf"><div class="inOf" data-value="Personal"></div></div>
-                    </div>
-                   </div>
-                   <div class="types">
-                    <div class="count">
-                        <p>15 Tasks</p>
-                    </div>
-                    <div class="taskName">
-                        <h2>Study</h2>
-                        <img src="./src/images/Study.png" alt="BuisnessIcon">
-                    </div>
-                    <div class="progress">
-                        <div class="outOf"><div class="inOf" data-value="Study"></div></div>
-                    </div>
-                   </div>
-                   <div class="types">
-                    <div class="count">
-                        <p>5 Tasks</p>
-                    </div>
-                    <div class="taskName">
-                        <h2>Music</h2>
-                        <img src="./src/images/Music.png" alt="BuisnessIcon">
-                    </div>
-                    <div class="progress">
-                        <div class="outOf"><div class="inOf" data-value="Music"></div></div>
-                    </div>
-                   </div>
+              <div class="secs">
+                <div class="sc" id="sc"></div>
               </div>
-           </div>
-           <div class="tasks">
-                <h4>Today's Tasks</h4>
-               <div class="assignes">
-                <div class="box">
-                       <div class="checkbox"></div>
-                       <div class="content"><p>Daily meeting with team</p></div>
+            </div>
+          </div>
+        </div>
+        <div class="categories">
+          <h4>Categories</h4>
+          <div class="wrapper">
+            <div class="types">
+              <div class="count">
+                <p>45 Tasks</p>
+              </div>
+              <div class="taskName">
+                <h2>Buisness</h2>
+                <img src="./src/images/Buisness.png" alt="BuisnessIcon" />
+              </div>
+              <div class="progress">
+                <div class="outOf">
+                  <div class="inOf" data-value="Buisness"></div>
                 </div>
-                <div class="box">
-                    <div class="checkbox"></div>
-                    <div class="content"><p>Daily meeting with team</p></div>
+              </div>
+            </div>
+            <div class="types">
+              <div class="count">
+                <p>20 Tasks</p>
+              </div>
+              <div class="taskName">
+                <h2>Personal</h2>
+                <img src="./src/images/Personal.png" alt="BuisnessIcon" />
+              </div>
+              <div class="progress">
+                <div class="outOf">
+                  <div class="inOf" data-value="Personal"></div>
                 </div>
-                <div class="box">
-                    <div class="checkbox"></div>
-                    <div class="content"><p>Daily meeting with team</p></div>
+              </div>
+            </div>
+            <div class="types">
+              <div class="count">
+                <p>15 Tasks</p>
+              </div>
+              <div class="taskName">
+                <h2>Study</h2>
+                <img src="./src/images/Study.png" alt="BuisnessIcon" />
+              </div>
+              <div class="progress">
+                <div class="outOf">
+                  <div class="inOf" data-value="Study"></div>
                 </div>
-                <div class="box">
-                    <div class="checkbox"></div>
-                    <div class="content"><p>Daily meeting with team</p></div>
+              </div>
+            </div>
+            <div class="types">
+              <div class="count">
+                <p>5 Tasks</p>
+              </div>
+              <div class="taskName">
+                <h2>Music</h2>
+                <img src="./src/images/Music.png" alt="BuisnessIcon" />
+              </div>
+              <div class="progress">
+                <div class="outOf">
+                  <div class="inOf" data-value="Music"></div>
                 </div>
-                <div class="box">
-                    <div class="checkbox"></div>
-                    <div class="content"><p>Daily meeting with team</p></div>
-             </div>
-             <div class="box">
-                 <div class="checkbox"></div>
-                 <div class="content"><p>Daily meeting with team</p></div>
-             </div>
-             <div class="box">
-                 <div class="checkbox"></div>
-                 <div class="content"><p>Daily meeting with team</p></div>
-             </div>
-             <div class="box">
-                 <div class="checkbox"></div>
-                 <div class="content"><p>Daily meeting with team</p></div>
-             </div>
-               </div>
-               <div class="add">
-                   <div class="icon">
-                    <img src="./src/images/plus.png" alt="addIcon">
-                   </div>
-               </div>
-           </div>
-           <div class="addTask" draggable="true">
-               <div class="pull"></div>
-           </div>
-       </div>
-   </div>
-   <script>
-       const deg = 6;
-       const hr = document.querySelector('#hr');
-       const mn = document.querySelector('#mn');
-       const sc = document.querySelector('#sc');
+              </div>
+            </div>
+            <div class="types">
+              <div class="count">
+                <p>45 Tasks</p>
+              </div>
+              <div class="taskName">
+                <h2>Buisness</h2>
+                <img src="./src/images/Buisness.png" alt="BuisnessIcon" />
+              </div>
+              <div class="progress">
+                <div class="outOf">
+                  <div class="inOf" data-value="Buisness"></div>
+                </div>
+              </div>
+            </div>
+            <div class="types">
+              <div class="count">
+                <p>20 Tasks</p>
+              </div>
+              <div class="taskName">
+                <h2>Personal</h2>
+                <img src="./src/images/Personal.png" alt="BuisnessIcon" />
+              </div>
+              <div class="progress">
+                <div class="outOf">
+                  <div class="inOf" data-value="Personal"></div>
+                </div>
+              </div>
+            </div>
+            <div class="types">
+              <div class="count">
+                <p>15 Tasks</p>
+              </div>
+              <div class="taskName">
+                <h2>Study</h2>
+                <img src="./src/images/Study.png" alt="BuisnessIcon" />
+              </div>
+              <div class="progress">
+                <div class="outOf">
+                  <div class="inOf" data-value="Study"></div>
+                </div>
+              </div>
+            </div>
+            <div class="types">
+              <div class="count">
+                <p>5 Tasks</p>
+              </div>
+              <div class="taskName">
+                <h2>Music</h2>
+                <img src="./src/images/Music.png" alt="BuisnessIcon" />
+              </div>
+              <div class="progress">
+                <div class="outOf">
+                  <div class="inOf" data-value="Music"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tasks">
+          <h4>Today's Tasks</h4>
+          <div class="assignes">
+            <div class="box">
+              <div class="checkbox"></div>
+              <div class="content"><p>Daily meeting with team</p></div>
+            </div>
+            <div class="box">
+              <div class="checkbox"></div>
+              <div class="content"><p>Daily meeting with team</p></div>
+            </div>
+            <div class="box">
+              <div class="checkbox"></div>
+              <div class="content"><p>Daily meeting with team</p></div>
+            </div>
+            <div class="box">
+              <div class="checkbox"></div>
+              <div class="content"><p>Daily meeting with team</p></div>
+            </div>
+            <div class="box">
+              <div class="checkbox"></div>
+              <div class="content"><p>Daily meeting with team</p></div>
+            </div>
+            <div class="box">
+              <div class="checkbox"></div>
+              <div class="content"><p>Daily meeting with team</p></div>
+            </div>
+            <div class="box">
+              <div class="checkbox"></div>
+              <div class="content"><p>Daily meeting with team</p></div>
+            </div>
+            <div class="box">
+              <div class="checkbox"></div>
+              <div class="content"><p>Daily meeting with team</p></div>
+            </div>
+          </div>
+          <div class="add">
+            <div class="icon">
+              <img src="./src/images/Plus.png" alt="addIcon" />
+            </div>
+          </div>
+        </div>
+        <div class="addTask" draggable="true">
+          <div class="pull"></div>
+          <img src="./src/images/form.png" alt="form Image" class="formImg" />
+          <div class="form">
+            <div class="popHeading">
+              <h1>New Task</h1>
+            </div>
+            <div class="columner">
+              <div class="inputWrap">
+                <label for="task"><i class="fas fa-solid fa-plus"></i></label>
+                <input type="text" placeholder="What's your plan for today ?" />
+              </div>
+            </div>
+            <div class="rower">
+              <div class="inputWrap">
+                <label for="task"
+                  ><i class="fas fa-solid fa-calendar-day"></i
+                ></label>
+                <input type="text" placeholder="Pick a day" />
+                <span><i class="fas fa-solid fa-chevron-down"></i></span>
+              </div>
+              <div class="inputWrap">
+                <label for="task"><i class="fas fa-solid fa-clock"></i></label>
+                <input type="text" placeholder="Pick a time" />
+                <span><i class="fas fa-solid fa-chevron-down"></i></span>
+              </div>
+            </div>
+            <div class="rower">
+              <div class="inputWrap">
+                <label for="task"
+                  ><i class="fas fa-solid fa-stopwatch-20"></i
+                ></label>
+                <input type="text" placeholder="Set Reminder" />
+                <span><i class="fas fa-solid fa-chevron-down"></i></span>
+              </div>
+              <div class="inputWrap">
+                <label for="task"><i class="fas fa-solid fa-list"></i></label>
+                <input type="text" placeholder="Category" />
+                <span><i class="fas fa-solid fa-chevron-down"></i></span>
+              </div>
+            </div>
+            <div class="formBtn">
+              <button><p>Save</p></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/e7a0c04ff2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const deg = 6
+      const hr = document.querySelector('#hr')
+      const mn = document.querySelector('#mn')
+      const sc = document.querySelector('#sc')
 
-      setInterval(()=>{
-        let day = new Date();
-       let hh = day.getHours()*30;
-       let mm = day.getMinutes()*deg;
-       let ss = day.getSeconds()*deg;
+      setInterval(() => {
+        let day = new Date()
+        let hh = day.getHours() * 30
+        let mm = day.getMinutes() * deg
+        let ss = day.getSeconds() * deg
 
-       hr.style.transform = `rotateZ(${(hh)+(mm/12)}deg)`;
-       mn.style.transform = `rotateZ(${mm}deg)`;
-       sc.style.transform = `rotateZ(${ss}deg)`;
+        hr.style.transform = `rotateZ(${hh + mm / 12}deg)`
+        mn.style.transform = `rotateZ(${mm}deg)`
+        sc.style.transform = `rotateZ(${ss}deg)`
       })
 
-      const checkboxes = document.querySelectorAll('.checkbox');
-      const content = document.querySelectorAll('.content');
-      checkboxes.forEach((checkbox,i)=>{
-          checkbox.addEventListener("click",function(e){
-            checkbox.classList.toggle('checkbox');  
-            checkbox.classList.toggle('checked');
-            content[i].firstChild.classList.toggle('strike');
-          })
+      const checkboxes = document.querySelectorAll('.checkbox')
+      const content = document.querySelectorAll('.content')
+      checkboxes.forEach((checkbox, i) => {
+        checkbox.addEventListener('click', function (e) {
+          checkbox.classList.toggle('checkbox')
+          checkbox.classList.toggle('checked')
+          content[i].firstChild.classList.toggle('strike')
+        })
       })
 
-      const addButton = document.querySelector('.add');
-      const addTask = document.querySelector('.addTask');
-      addButton.addEventListener("click",function(){
-        addTask.style.bottom="0"+"%";
-        addTask.style.transition="0.2s ease-in-out";
+      const addButton = document.querySelector('.add')
+      const addTask = document.querySelector('.addTask')
+      addButton.addEventListener('click', function () {
+        addTask.style.bottom = '0' + '%'
+        addTask.style.transition = '0.2s ease-in-out'
       })
 
-    
-      var startY;
-      var endY;
-      addTask.addEventListener("dragstart",(e)=>{
-        var img = new Image();
-        img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
-        event.dataTransfer.setDragImage(img, 0, 0);
-        startY=e.pageY;
-        addTask.style.transition="none";
+      var startY
+      var endY
+      addTask.addEventListener('dragstart', (e) => {
+        var img = new Image()
+        img.src =
+          'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs='
+        event.dataTransfer.setDragImage(img, 0, 0)
+        startY = e.pageY
+        addTask.style.transition = 'none'
       })
-      addTask.addEventListener("drag",(e)=>{
-       if(e.pageY>startY){
-        addTask.style.bottom=-(e.pageY-startY)+'px';
-       }
-      })
-      addTask.addEventListener("dragend",(e)=>{  
-        if(startY+150<e.pageY){
-            addTask.style.bottom=-(e.pageY-startY)+'px';
-           setTimeout(()=>{
-            addTask.style.bottom="-100"+"%";
-            addTask.style.transition="0.2s linear";
-           },100)
-        }else if(e.pageY>startY){
-            addTask.style.bottom=-(e.pageY-startY)+'px';
-           setTimeout(()=>{
-            addTask.style.bottom="0"+"%";
-            addTask.style.transition="0.2s linear";
-           },100);
+      addTask.addEventListener('drag', (e) => {
+        if (e.pageY > startY) {
+          addTask.style.bottom = -(e.pageY - startY) + 'px'
         }
       })
-
-   </script>
-</body>
+      addTask.addEventListener('dragend', (e) => {
+        if (startY + 150 < e.pageY) {
+          addTask.style.bottom = -(e.pageY - startY) + 'px'
+          setTimeout(() => {
+            addTask.style.bottom = '-100' + '%'
+            addTask.style.transition = '0.2s linear'
+          }, 100)
+        } else if (e.pageY > startY) {
+          addTask.style.bottom = -(e.pageY - startY) + 'px'
+          setTimeout(() => {
+            addTask.style.bottom = '0' + '%'
+            addTask.style.transition = '0.2s linear'
+          }, 100)
+        }
+      })
+    </script>
+  </body>
 </html>
