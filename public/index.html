@@ -42,7 +42,7 @@
           </div>
        </div>
        <div class="sideBox">
-           <div class="boxWrapper">
+         
            <div class="heading">
                <div class="greeting">
                    <h1>What's up, Olivia !</h1>
@@ -165,13 +165,9 @@
            <div class="tasks">
                 <h4>Today's Tasks</h4>
                <div class="assignes">
-                   <div class="box">
+                <div class="box">
                        <div class="checkbox"></div>
                        <div class="content"><p>Daily meeting with team</p></div>
-                   </div>
-                <div class="box">
-                    <div class="checkbox"></div>
-                    <div class="content"><p>Daily meeting with team</p></div>
                 </div>
                 <div class="box">
                     <div class="checkbox"></div>
@@ -181,7 +177,26 @@
                     <div class="checkbox"></div>
                     <div class="content"><p>Daily meeting with team</p></div>
                 </div>
-                 
+                <div class="box">
+                    <div class="checkbox"></div>
+                    <div class="content"><p>Daily meeting with team</p></div>
+                </div>
+                <div class="box">
+                    <div class="checkbox"></div>
+                    <div class="content"><p>Daily meeting with team</p></div>
+             </div>
+             <div class="box">
+                 <div class="checkbox"></div>
+                 <div class="content"><p>Daily meeting with team</p></div>
+             </div>
+             <div class="box">
+                 <div class="checkbox"></div>
+                 <div class="content"><p>Daily meeting with team</p></div>
+             </div>
+             <div class="box">
+                 <div class="checkbox"></div>
+                 <div class="content"><p>Daily meeting with team</p></div>
+             </div>
                </div>
                <div class="add">
                    <div class="icon">
@@ -189,6 +204,8 @@
                    </div>
                </div>
            </div>
+           <div class="addTask" draggable="true">
+               <div class="pull"></div>
            </div>
        </div>
    </div>
@@ -218,6 +235,45 @@
             content[i].firstChild.classList.toggle('strike');
           })
       })
+
+      const addButton = document.querySelector('.add');
+      const addTask = document.querySelector('.addTask');
+      addButton.addEventListener("click",function(){
+        addTask.style.bottom="0"+"%";
+        addTask.style.transition="0.2s ease-in-out";
+      })
+
+    
+      var startY;
+      var endY;
+      addTask.addEventListener("dragstart",(e)=>{
+        var img = new Image();
+        img.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=';
+        event.dataTransfer.setDragImage(img, 0, 0);
+        startY=e.pageY;
+        addTask.style.transition="none";
+      })
+      addTask.addEventListener("drag",(e)=>{
+       if(e.pageY>startY){
+        addTask.style.bottom=-(e.pageY-startY)+'px';
+       }
+      })
+      addTask.addEventListener("dragend",(e)=>{  
+        if(startY+150<e.pageY){
+            addTask.style.bottom=-(e.pageY-startY)+'px';
+           setTimeout(()=>{
+            addTask.style.bottom="-100"+"%";
+            addTask.style.transition="0.2s linear";
+           },100)
+        }else if(e.pageY>startY){
+            addTask.style.bottom=-(e.pageY-startY)+'px';
+           setTimeout(()=>{
+            addTask.style.bottom="0"+"%";
+            addTask.style.transition="0.2s linear";
+           },100);
+        }
+      })
+
    </script>
 </body>
 </html>

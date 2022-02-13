@@ -1,7 +1,9 @@
 .sideBox {
   flex-basis: 75%;
   padding: 3rem 0 2rem 0;
+  height: 100vh;
   overflow: scroll;
+  position: relative;
 }
 .sideBox::-webkit-scrollbar {
   display: none;
@@ -269,14 +271,6 @@
   background-size: cover;
   animation: checked 0.1s ease-in-out;
 }
-@keyframes checked {
-  0% {
-    transform: scale(0, 0);
-  }
-  100% {
-    transform: scale(1, 1);
-  }
-}
 .strike {
   text-decoration: line-through;
 }
@@ -289,4 +283,42 @@
 .box .content {
   font-size: 2rem;
   color: white;
+}
+.addTask,
+.addActive {
+  position: fixed;
+  right: 0;
+  height: 80%;
+  width: 75%;
+  background: var(--popbox-color);
+  z-index: 100;
+  border-radius: 2rem 2rem 0 0;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.25);
+}
+.addTask {
+  bottom: -100%;
+}
+.pull {
+  position: inherit;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 0.6rem;
+  width: 8rem;
+  border-radius: 0.5rem;
+  background: var(--main-theme);
+  cursor: grab;
+}
+.pull:active {
+  cursor: grabbing;
+}
+
+@keyframes checked {
+  0% {
+    transform: scale(0, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
 }
