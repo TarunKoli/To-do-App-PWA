@@ -17,7 +17,9 @@
   justify-content: flex-end;
   margin-top: 1rem;
 }
-
+.switch[data-value='tasks'] {
+  margin: 0;
+}
 .switch div {
   border: 0.3rem solid var(--main-theme);
   height: 7.5rem;

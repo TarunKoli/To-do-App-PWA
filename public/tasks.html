@@ -35,7 +35,7 @@
           </div>
           <div>
             <figure><i class="far fa-clock"></i></figure>
-            <a>Schedules</a>
+            <a href="./index.html">Home</a>
           </div>
         </div>
         <div class="graph">
@@ -153,6 +153,36 @@
             </div>
           </div>
         </div>
+        <div class="editTask">
+          <div class="side-pop-heading">
+            <h1>Task Details</h1>
+            <div class="switch" data-value="tasks">
+              <div><i class="fas fa-angle-right"></i></div>
+            </div>
+          </div>
+          <div class="edit-inputs">
+            <div class="edit-wrapper">
+              <label for="plan">Your plan</label>
+              <textarea name="plan" spellcheck="false">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</textarea
+              >
+            </div>
+            <div class="edit-wrapper">
+              <label for="day">Day</label>
+              <input name="day" type="text" value="02 February 2022" />
+            </div>
+            <div class="edit-wrapper">
+              <label for="time">Time</label>
+              <input name="time" type="text" value="12:00 PM" />
+            </div>
+          </div>
+          <div class="deleteTask">
+            <button>Delete Task</button>
+            <div class="dropdown">
+              Buisness task &nbsp;<i class="fas fa-angle-down"></i>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <script
@@ -162,5 +192,20 @@
     <script src="./src/js/clock.js"></script>
     <script src="./src/js/checkboxes.js"></script>
     <script src="./src/js/popup.js"></script>
+    <script>
+      var editTask = document.querySelector('.editTask')
+      var tasks = document.querySelectorAll('.box')
+      var sidePopSwitch = document.querySelector('.side-pop-heading .switch')
+
+      tasks.forEach((task, i) => {
+        task.addEventListener('click', () => {
+          editTask.style.right = '0'
+        })
+      })
+
+      sidePopSwitch.addEventListener('click', () => {
+        editTask.style.right = '-35%'
+      })
+    </script>
   </body>
 </html>

@@ -266,6 +266,7 @@
   align-items: center;
   justify-content: flex-start;
   padding: 0 2rem;
+  cursor: pointer;
 }
 .box .checkbox,
 .checked {
@@ -403,4 +404,94 @@
   100% {
     transform: scale(1, 1);
   }
+}
+
+.editTask {
+  position: fixed;
+  top: 0;
+  right: -35%;
+  height: 100%;
+  width: 30%;
+  background: var(--popbox-color);
+  z-index: 90;
+  border-radius: 1rem 0 0 1rem;
+  backdrop-filter: blur(20px);
+  padding: 3rem 4rem 0 4rem;
+  overflow: hidden;
+  box-shadow: -1rem 0 1rem rgba(0, 0, 0, 0.3);
+  transition: 0.2s ease-in-out;
+}
+
+.side-pop-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-size: 1.6rem;
+}
+
+.edit-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 4rem 0 2rem 0;
+}
+.edit-wrapper label {
+  color: white;
+  font-size: 1.8rem;
+  margin: 0 0 1.5rem 0.5rem;
+}
+.edit-wrapper input {
+  height: 5rem;
+  font-size: 1.6rem;
+}
+.edit-wrapper textarea {
+  min-height: 18rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.05rem;
+  line-height: 2.3rem;
+  font-weight: lighter;
+}
+.edit-wrapper input,
+.edit-wrapper textarea {
+  width: 100%;
+  border-radius: 1rem;
+  background: var(--popbox-color);
+  border: 0.1rem solid var(--popbox-color);
+  box-shadow: 0 -1rem 1.5rem rgba(41, 74, 194, 0.35),
+    inset 0 -0.8rem 1.5rem rgba(41, 74, 194, 0.35),
+    0 1rem 1.5rem rgba(15, 23, 53, 0.5),
+    inset 0 1rem 1.5rem rgba(15, 23, 53, 0.5);
+  color: var(--popbox-text);
+  padding: 2rem;
+}
+.edit-wrapper input:focus,
+.edit-wrapper textarea:focus {
+  outline: none;
+}
+.deleteTask {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 8rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(19, 16, 90, 0.8);
+  box-shadow: 0 -0.8rem 0.8rem rgba(0, 0, 0, 0.2);
+  padding: 0 4rem;
+}
+.deleteTask button {
+  background-color: #d20000;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1.2rem 2rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.deleteTask .dropdown {
+  color: var(--popbox-text);
+  font-size: 1.6rem;
+  font-weight: 600;
 }
