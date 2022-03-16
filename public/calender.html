@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles/global.css" />
+    <link rel="stylesheet" href="./src/styles/nav.css" />
+    <link rel="stylesheet" href="./src/styles/calender.css">
+    <link rel="stylesheet" href="./src/styles/sidePop.css">
+    <title>To-Do App / Calender</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="nav">
+        <div class="switch">
+          <div><i class="fas fa-angle-left"></i></div>
+        </div>
+        <div class="profileImg">
+          <div class="image">
+            <span></span>
+            <img src="./src/images/Vector.png" alt="" />
+          </div>
+        </div>
+        <div class="name">
+          <h1>Olivia Mitchell</h1>
+        </div>
+        <div class="links">
+          <div>
+            <figure><i class="far fa-bookmark"></i></figure>
+            <a href="./tasks.html">Task List</a>
+          </div>
+          <div>
+            <figure><i class="fas fa-th-large"></i></figure>
+            <a href="./category-list.html">Categories</a>
+          </div>
+          <div>
+            <figure><i class="far fa-clock"></i></figure>
+            <a href="./index.html">Home</a>
+          </div>
+        </div>
+        <div class="graph">
+          <div><img src="./src/images/Group 3.png" alt="" /></div>
+          <div>
+            <p>Good</p>
+            <h2>Consistency</h2>
+          </div>
+        </div>
+      </div>
+      <div class="sideBox">
+       <div class="calenderBox">
+         
+         <div class="calender">
+           <h1>Mar 26, Tue</h1>
+           <div class="month">
+             <div class="weeks">
+               <div>Sun</div>
+               <div>Mon</div>
+               <div>Tue</div>
+               <div>Wed</div>
+               <div>Thu</div>
+               <div>Fri</div>
+               <div>Sat</div>
+            </div>
+            <div class="dates">
+              <p class="event">32</p>
+              <p class="today">33</p>
+              <p class="holiday">33</p>
+            </div>
+          </div>
+
+          <div class="cal_years">
+              <p>This month you have 3 tasks to do<br />Completed 4 tasks</p>
+              <div class="years">
+                <div class="left">
+                  <i class="fas fa-solid fa-chevron-left"></i>
+                </div>
+                  <h1>2006</h1>
+                <div class="right">
+                  <i class="fas fa-solid fa-chevron-right"></i>
+                </div>
+              </div>
+          </div>
+
+        <div class="carousel"></div>
+      
+        </div>
+
+
+         <div class="cal_img">
+           <img src="./src/images/calender.svg" alt="">
+         </div>
+        
+        </div>
+
+        <div class="editTask">
+          <div class="side-pop-heading">
+            <h1>Task Details</h1>
+            <div class="switch" data-value="tasks">
+              <div><i class="fas fa-angle-right"></i></div>
+            </div>
+          </div>
+          <div class="edit-inputs">
+            <div class="edit-wrapper">
+              <label for="plan">Your plan</label>
+              <textarea name="plan" spellcheck="false">
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</textarea
+              >
+            </div>
+            <div class="edit-wrapper">
+              <label for="day">Day</label>
+              <input name="day" type="text" value="02 February 2022" />
+            </div>
+            <div class="edit-wrapper">
+              <label for="time">Time</label>
+              <input name="time" type="text" value="12:00 PM" />
+            </div>
+          </div>
+          <div class="deleteTask">
+            <button>Delete Task</button>
+            <div class="dropdown">
+              Buisness task &nbsp;<i class="fas fa-angle-down"></i>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  
+  
+  
+    <script
+      src="https://kit.fontawesome.com/e7a0c04ff2.js"
+      crossorigin="anonymous"
+  ></script>
+
+  <script>
+    var dates = document.querySelector('.dates');
+    var editTask = document.querySelector('.editTask')
+    var sidePopSwitch = document.querySelector('.side-pop-heading .switch')
+
+    for(var i=0; i<=31; i++){
+      var p = document.createElement('p');
+      if(i===0){
+        p.style.color="#8FA7FF";
+        p.textContent=31;
+      }else if(i>31){
+        p.style.color="#8FA7FF";
+        p.textContent=i-31;
+      }else{
+        p.textContent=i;
+      }
+      p.addEventListener('click',()=>{ console.log("clicked");  editTask.style.right = '0'})
+      dates.appendChild(p);  
+    }
+    
+    sidePopSwitch.addEventListener('click', () => {
+        editTask.style.right = '-35%'
+      })
+
+    var carousel=document.querySelector('.carousel');
+    var months = ['','','','January','February','March','April','May','June','July','August','September','October','November','December','','',''];
+
+    months.forEach((month)=>{
+      var p= document.createElement('p');
+      var a= document.createElement('a');
+      a.textContent=month;
+      a.href=`#${month}`;
+      p.appendChild(a);
+      p.id=month;
+      carousel.appendChild(p);
+    })
+
+
+    var selectedMonth;
+    carousel.addEventListener('scroll',()=>{
+
+      var timer;
+
+      if(timer !== null) {
+        clearTimeout(timer);        
+      }
+
+      carousel.childNodes.forEach((child,i)=>{
+        var width=carousel.getBoundingClientRect().width;
+        var eleLeft =child.getBoundingClientRect().left; 
+        
+        if(width/2+20>eleLeft/2 && ((width/2)-10)<eleLeft/2){
+          
+          child.style.color="white";
+          child.style.fontSize="2.4rem";
+          child.style.fontWeight="500";
+          child.previousSibling.style.fontSize="1.8rem";
+          child.previousSibling.style.color="#9fb4ff";
+          
+          setTimeout(()=>{
+            child.nextSibling.style.fontSize="1.8rem";
+            child.nextSibling.style.color="#9fb4ff";
+          },50);
+          
+          selectedMonth=child;
+
+        }else{
+            child.style.fontSize="1.4rem";
+            child.style.fontWeight="400";
+            child.style.color="#6f8eff";
+        }
+
+      })
+
+      timer = setTimeout(function() {
+         callAPI(selectedMonth);
+      }, 1000);
+
+    })
+
+    var check;
+    function callAPI(month){
+      if(check!==month && month!==undefined && month===selectedMonth)
+      {
+        check=month;
+        console.log(month);
+      }
+    }
+
+
+  </script>
+
+  </body>
+</html>

@@ -1,0 +1,200 @@
+.sideBox {
+  flex-basis: 75%;
+  height: 100vh;
+  overflow: scroll;
+  position: relative;
+}
+.sideBox::-webkit-scrollbar {
+  display: none;
+}
+.calenderBox {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.calender {
+  flex-basis: 65%;
+  width: 65%;
+  padding: 5.5rem 0 5rem 3rem;
+}
+.calender h1 {
+  color: white;
+  font-size: 2.4rem;
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+.calender .months {
+  width: 100%;
+  border: 2px solid black;
+}
+.calender .weeks {
+  gap: 3rem;
+  margin-top: 4rem;
+}
+.weeks div {
+  color: #d1dbff;
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: 500;
+}
+.calender .weeks,
+.calender .dates {
+  color: white;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 7rem);
+  /* border: 2px solid red; */
+}
+.calender .dates {
+  margin-top: 5rem;
+  gap: 5rem 3rem;
+  position: relative;
+}
+.dates::before {
+  content: 'calender';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  font-size: 9rem;
+  color: rgba(255, 255, 255, 0.03);
+  letter-spacing: 3rem;
+  font-weight: bolder;
+  z-index: 1;
+}
+.dates p {
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: 500;
+  z-index: 10;
+  cursor: pointer;
+  position: relative;
+}
+.cal_years {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5rem;
+  padding-left: 1.5rem;
+  padding-right: 3rem;
+}
+.cal_years p {
+  color: #d1dbff;
+  font-size: 1.4rem;
+  line-height: 2rem;
+}
+.cal_years .years {
+  display: flex;
+  align-items: center;
+}
+.years .left,
+.years .right {
+  color: white;
+  font-size: 1.6rem;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 0 2rem;
+  box-shadow: 0 -0.5rem 0.5rem rgba(69, 102, 222, 0.35),
+    inset 0 -0.5rem 0.5rem rgba(69, 102, 222, 0.35),
+    0 0.5rem 0.5rem rgba(15, 23, 53, 0.25),
+    inset 0 0.5rem 0.5rem rgba(15, 23, 53, 0.25);
+  cursor: pointer;
+}
+
+.carousel {
+  width: 100%;
+  margin-top: 8rem;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding-right: 3rem;
+  overflow-x: scroll;
+  height: 4rem;
+  scroll-behavior: smooth;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel p {
+  width: 13rem;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #6f8eff;
+  margin: 0 5rem;
+  transition: 0.2s;
+}
+.carousel p:first-child {
+  margin-left: 0;
+}
+.carousel p:last-child {
+  margin-right: 0;
+}
+.carousel p > a {
+  cursor: pointer;
+}
+
+.event::before,
+.event::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 150%;
+  transform: translateX(-50%);
+  background: #41bbff;
+  height: 0.7rem;
+  width: 0.7rem;
+  border-radius: 50%;
+}
+.event::before {
+  filter: blur(0.5rem);
+}
+
+.today::before,
+.today::after,
+.holiday::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -1;
+}
+.today::before {
+  height: 4rem;
+  width: 4rem;
+  background-color: #fa25b1;
+}
+.today::after {
+  height: 5.5rem;
+  width: 5.5rem;
+  background-color: rgba(250, 37, 177, 0.5);
+}
+.holiday::before {
+  height: 4rem;
+  width: 4rem;
+  background-color: rgb(55, 162, 233);
+}
+
+.cal_img {
+  flex-basis: 35%;
+  height: 100%;
+  background-image: url(../images/bg1.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+  position: relative;
+}
+.cal_img img {
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  width: 85%;
+}
