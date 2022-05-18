@@ -12,6 +12,7 @@
   <body>
     <div class="main">
       <div class="nav">
+        <div class="cover">
         <div class="switch">
           <div><i class="fas fa-angle-left"></i></div>
         </div>
@@ -22,12 +23,12 @@
           </div>
         </div>
         <div class="name">
-          <h1>Olivia Mitchell</h1>
+          <h1>Olivia<br />Mitchell</h1>
         </div>
         <div class="links">
           <div>
             <figure><i class="far fa-bookmark"></i></figure>
-            <a href="./tasks.html">Task List</a>
+            <a href="./calender.html">Calender</a>
           </div>
           <div>
             <figure><i class="fas fa-th-large"></i></figure>
@@ -38,6 +39,7 @@
             <a href="./index.html">Home</a>
           </div>
         </div>
+        </div>
         <div class="graph">
           <div><img src="./src/images/Group 3.png" alt="" /></div>
           <div>
@@ -45,8 +47,11 @@
             <h2>Consistency</h2>
           </div>
         </div>
-      </div>
+      </div>  
       <div class="sideBox">
+        <div class="ham">
+          <i class="fas fa-solid fa-bars"></i>
+        </div>
         <div class="heading">
           <div class="greeting">
             <h1>What's up, Olivia !</h1>
@@ -279,5 +284,21 @@
     <script src="./src/js/clock.js"></script>
     <script src="./src/js/checkboxes.js"></script>
     <script src="./src/js/popup.js"></script>
-  </body>
+    
+    <script>
+      const ham = document.querySelector('.ham');
+      const sideBox = document.querySelector('.sideBox')
+      const ham_switcher = document.querySelector('.switch');
+
+      ham.addEventListener('click',()=>{
+        sideBox.classList.toggle('sideBox_slide');
+      })
+
+      ham_switcher.addEventListener('click',()=>{
+        sideBox.classList.toggle('sideBox_slide');
+      })
+
+    </script>
+  
+</body>
 </html>

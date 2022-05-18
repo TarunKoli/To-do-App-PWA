@@ -21,9 +21,9 @@
   margin: 0;
 }
 .switch div {
-  border: 0.3rem solid var(--main-theme);
-  height: 7.5rem;
-  width: 7.5rem;
+  border: 0.2rem solid var(--main-theme);
+  height: 7rem;
+  width: 7rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -140,4 +140,33 @@
   font-size: 2.2rem;
   font-weight: 500;
   letter-spacing: 1px;
+}
+
+
+@media(max-width:550px){
+  .nav{
+    flex-basis: 100%;
+    padding: 3rem 30% 15% 12%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .profileImg{
+    margin-top: 0;
+  }
+  .profileImg,.name,.links{
+    padding-left: 0;
+  }
+  .links div{
+    padding: 1rem 0 1rem 0;
+  }
+  .links div a {
+    font-size: 1.8rem;
+  }
+  .name h1{
+    font-size: 4rem;
+  }
+  .graph{
+    padding-left: 0;
+  }
 }

@@ -4,6 +4,7 @@
   height: 100vh;
   overflow: scroll;
   position: relative;
+  transition: 0.2s ease-in-out;
 }
 .sideBox::-webkit-scrollbar {
   display: none;
@@ -403,5 +404,147 @@
   }
   100% {
     transform: scale(1, 1);
+  }
+}
+.ham{
+  display: none;
+}
+
+@media(max-width:550px){
+  .sideBox{
+    position: absolute;
+    background: var(--main-theme);
+    z-index: 20;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding: 2rem 0 2rem 0;
+  }
+  .ham{
+    display: block;
+    font-size: 2rem;
+    color: var(--popbox-text);
+    padding: 4% 3.5rem 4% 3.5rem;
+  }
+  .clocksy{
+    margin:-4rem 0 0 0;
+    padding: 0;
+  }
+  .heading{
+    padding: 0 3.5rem;
+  }
+  .greeting{
+    flex-basis: 100%;
+    width: 100%;
+    font-size: 1.6rem;
+  }
+  .categories,
+  .tasks[data-value="tasks"]{
+    flex-direction: column;
+    margin-top: 7%;
+  }
+  .wrapper{
+    overflow: scroll;
+    padding-bottom: 10%;
+  }
+  .types:first-child {
+    margin-left: 3.5rem;
+  }
+  .taskName h2 {
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    font-weight: 500;
+  }
+  .taskName img{
+    height: 7.5rem;
+    width: 7.5rem;
+  }
+  .tasks{
+    padding: 0;
+    margin-top: 2%;
+    padding: 0 3.5rem;
+  }
+  .tasks h4,.categories h4,.tasks h4{
+    font-size: 1.6rem;
+    letter-spacing: normal;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  .categories h4{
+    position: static;
+    padding: 0 3.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .assignes{
+    width: 100%;
+    flex-direction: column;
+  }
+  .assignes .box{
+    margin: 1rem 0;
+    width: 100%;
+  }
+  .add{
+    right: 8%;
+  }
+  .add .icon{
+    height: 7rem;
+    width: 7rem;
+  }
+  .icon>img{
+    height: 3rem;
+    width: 3rem;
+  }
+  .form{
+    width: 100%;
+  }
+  .addTask,
+  .addActive{
+    width: 100%;
+    height: 70%;
+    padding: 2rem 3rem;
+  }
+  .addTask .formImg{
+    display: none;
+  }
+  .popHeading{
+    margin: 4rem 0 ;
+  }
+  .popHeading h1{
+    font-size: 2.4rem;
+    font-weight: normal;
+    letter-spacing: normal;
+  }
+  .columner {
+    margin:2.5rem 0;
+  }
+  .rower {
+    margin: 0;
+    flex-direction: column;
+  }
+  .rower .inputWrap {
+    width: 100%;
+    margin: 2.3rem 0;
+  }
+  .formBtn{
+    margin-top: 1rem;
+  }
+  .formBtn button {
+    height: 5rem;
+    width: 12rem;
+    font-size: 1.8rem;
+  }
+  .main{
+    max-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  .sideBox_slide{
+    transform: scale(0.9,0.9);
+    border-radius: 3rem;
+    left: 75%;
+    transition: 0.2s ease-in-out;
+    overflow: hidden;
+    /* display: none; */
   }
 }

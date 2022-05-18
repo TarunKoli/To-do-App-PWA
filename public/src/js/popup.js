@@ -35,3 +35,34 @@ addTask.addEventListener('dragend', (e) => {
     }, 100)
   }
 })
+
+addTask.addEventListener('touchstart', (e) => {
+  startY = e.touches[0].pageY
+  addTask.style.transition = 'none'
+})
+
+addTask.addEventListener('touchmove', (e) => {
+  if (e.touches[0].pageY > startY) {
+    endY = -(e.touches[0].pageY - startY)
+    addTask.style.bottom = endY + 'px'
+  }
+})
+
+addTask.addEventListener('touchend', (e) => {
+  console.log(startY, -endY)
+  if (startY < -endY + 100) {
+    console.log('entered1')
+    addTask.style.bottom = endY - startY + 'px'
+    setTimeout(() => {
+      addTask.style.bottom = '-100' + '%'
+      addTask.style.transition = '0.2s linear'
+    }, 100)
+  } else if (endY > startY) {
+    console.log('entered2')
+    addTask.style.bottom = endY - startY + 'px'
+    setTimeout(() => {
+      addTask.style.bottom = '0' + '%'
+      addTask.style.transition = '0.2s linear'
+    }, 100)
+  }
+})
