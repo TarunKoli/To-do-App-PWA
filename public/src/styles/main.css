@@ -545,6 +545,12 @@
     left: 75%;
     transition: 0.2s ease-in-out;
     overflow: hidden;
-    /* display: none; */
+  }
+  .wrapper[data-value='list'] {
+    padding: 0 3rem;
+  }
+  .wrapper[data-value='list'] .types {
+    margin: 0 0 4rem 0;
+    width: 100%;
   }
 }

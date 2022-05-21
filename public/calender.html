@@ -48,10 +48,13 @@
         </div>
       </div>
       <div class="sideBox">
+        <div class="ham">
+          <i class="fas fa-solid fa-bars"></i>
+        </div>
        <div class="calenderBox">
          
          <div class="calender">
-           <h1>Mar 26, Tue</h1>
+           <h1 class="date">Mar 26, Tue</h1>
            <div class="month">
              <div class="weeks">
                <div>Sun</div>
@@ -70,7 +73,7 @@
           </div>
 
           <div class="cal_years">
-              <p>This month you have 3 tasks to do<br />Completed 4 tasks</p>
+              <p>This month you have 3 tasks to do Completed 4 tasks</p>
               <div class="years">
                 <div class="left">
                   <i class="fas fa-solid fa-chevron-left"></i>
@@ -174,7 +177,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
     }
     
     sidePopSwitch.addEventListener('click', () => {
-        editTask.style.right = '-35%'
+        editTask.style.right = '-110%'
       })
 
     var carousel=document.querySelector('.carousel');
@@ -200,50 +203,70 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
         clearTimeout(timer);        
       }
 
+      let devicetype=window.innerWidth;
+      devicetype>600 ? Animator() : Animator(1,2,1.6,1.4,30);
+
+      
+      timer = setTimeout(function() {
+        callAPI(selectedMonth);
+      }, 1000);
+      
+    })
+    
+    var check;
+    function callAPI(month){
+      if(check!==month && month!==undefined && month===selectedMonth)
+      {
+        check=month;
+      }
+    }
+    
+    function Animator(prec=2, fontSize=2.4, prevFontSize=1.8, elseFont=1.4,coverage=10){
       carousel.childNodes.forEach((child,i)=>{
-        var width=carousel.getBoundingClientRect().width;
-        var eleLeft =child.getBoundingClientRect().left; 
-        
-        if(width/2+20>eleLeft/2 && ((width/2)-10)<eleLeft/2){
+      
+      var width=carousel.getBoundingClientRect().width;
+      var eleLeft =child.getBoundingClientRect().left; 
+
+      if(width/2+20>eleLeft/prec && ((width/2)-coverage)<eleLeft/prec){
           
           child.style.color="white";
-          child.style.fontSize="2.4rem";
+          child.style.fontSize=`${fontSize}rem`;
           child.style.fontWeight="500";
-          child.previousSibling.style.fontSize="1.8rem";
+          child.previousSibling.style.fontSize=`${prevFontSize}rem`;
           child.previousSibling.style.color="#9fb4ff";
           
           setTimeout(()=>{
-            child.nextSibling.style.fontSize="1.8rem";
+            child.nextSibling.style.fontSize=`${prevFontSize}rem`;
             child.nextSibling.style.color="#9fb4ff";
           },50);
           
           selectedMonth=child;
 
         }else{
-            child.style.fontSize="1.4rem";
+            child.style.fontSize=`${elseFont}rem`;
             child.style.fontWeight="400";
             child.style.color="#6f8eff";
         }
-
       })
-
-      timer = setTimeout(function() {
-         callAPI(selectedMonth);
-      }, 1000);
-
-    })
-
-    var check;
-    function callAPI(month){
-      if(check!==month && month!==undefined && month===selectedMonth)
-      {
-        check=month;
-        console.log(month);
-      }
+     
     }
 
-
   </script>
+
+<script>
+  const ham = document.querySelector('.ham');
+  const sideBox = document.querySelector('.sideBox')
+  const ham_switcher = document.querySelector('.switch');
+
+  ham.addEventListener('click',()=>{
+    sideBox.classList.toggle('sideBox_slide');
+  })
+
+  ham_switcher.addEventListener('click',()=>{
+    sideBox.classList.toggle('sideBox_slide');
+  })
+
+</script>
 
   </body>
 </html>

@@ -4,6 +4,9 @@
   overflow: scroll;
   position: relative;
 }
+.ham{
+  display: none;
+}
 .sideBox::-webkit-scrollbar {
   display: none;
 }
@@ -25,9 +28,8 @@
   font-weight: 600;
   margin-left: 1rem;
 }
-.calender .months {
+.calender .month {
   width: 100%;
-  border: 2px solid black;
 }
 .calender .weeks {
   gap: 3rem;
@@ -45,7 +47,6 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(7, 7rem);
-  /* border: 2px solid red; */
 }
 .calender .dates {
   margin-top: 5rem;
@@ -197,4 +198,90 @@
   right: 5%;
   bottom: 0;
   width: 85%;
+}
+
+@media(max-width:550px){
+  .sideBox{
+    position: absolute;
+    background: var(--main-theme);
+    z-index: 20;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding: 2rem 0 0 0;
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+  }
+  .ham{
+    display: block;
+    font-size: 2rem;
+    color: var(--popbox-text);
+    padding: 4% 3.5rem 0 3.5rem;
+  }
+  .sideBox_slide{
+    transform: scale(0.9,0.9);
+    border-radius: 3rem;
+    left: 75%;
+    transition: 0.2s ease-in-out;
+    overflow: hidden;
+  }
+  .calender {
+    padding: 3rem 2rem;
+    flex-basis: 100%;
+    width: 100%;
+  }
+  .calender h1{
+    margin: 0;
+  }
+  .calender .date {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .cal_img {
+    display: none;
+  }
+  .cal_years {
+    padding: 0;
+    width: 100%;
+  }
+  .years h1{
+    font-size: 1.8rem;
+    margin: 0 1.5rem;
+  }
+  .years .left,
+  .years .right {
+    font-size: 1.6rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 ;
+  }
+  .years .left{
+    margin-left: 5rem;
+  }
+  .calender .weeks {
+    gap: 0.3rem;
+    margin-top: 2rem;
+    margin-bottom: 10%;
+  }
+  .dates p{
+    font-size: 1.6rem;
+  }
+  .calender .dates {
+    margin-top: 2rem;
+    gap: 5rem 0.3rem;
+  }
+  .weeks div {
+    font-size: 1.6rem;
+  }
+  .calender .weeks,
+  .calender .dates {
+  grid-template-columns: repeat(7, 7fr);
+  }
+  .dates::before {
+    font-size: 6rem;
+    letter-spacing: 1rem;
+  }
 }

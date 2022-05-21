@@ -45,6 +45,7 @@
 }
 .editTask[data-value="cal_pop"] .edit-inputs{
   padding: 0 4rem;
+  padding-bottom: 45%;
   overflow: scroll;
 }
 .edit-inputs::-webkit-scrollbar {
